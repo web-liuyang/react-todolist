@@ -1,0 +1,48 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "cross-env UMI_ENV=dev umi dev",
+    "build": "cross-env UMI_ENV=prod umi build",
+    "postinstall": "umi generate tmp",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/pro-layout": "^6.5.0",
+    "@umijs/preset-react": "1.x",
+    "ahooks": "^2.9.6",
+    "classnames": "^2.2.6",
+    "default-passive-events": "^2.0.0",
+    "hammerjs": "^2.0.8",
+    "l-native-tools": "^1.0.1",
+    "umi": "^3.3.7"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.11",
+    "@types/hammerjs": "^2.0.38",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@umijs/test": "^3.3.7",
+    "cross-env": "^7.0.3",
+    "lint-staged": "^10.0.7",
+    "postcss-px-to-viewport": "^1.1.1",
+    "prettier": "^2.2.0",
+    "react": "17.x",
+    "react-dom": "17.x",
+    "typescript": "^4.1.2",
+    "vconsole": "^3.4.0",
+    "yorkie": "^2.0.0"
+  }
+}

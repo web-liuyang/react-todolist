@@ -1,0 +1,31 @@
+.l-modal {
+  .modal-container {
+    z-index: 15;
+
+    animation: toggle-animation 0.3s linear;
+
+    .modal-box {
+      width: 70%;
+    }
+
+    .event-buttons {
+      height: 45px;
+
+      .cancel-button,
+      .confirm-button {
+        &:active {
+          filter: opacity(0.5);
+        }
+      }
+    }
+  }
+}
+
+@keyframes toggle-animation {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

@@ -1,0 +1,30 @@
+.component-list {
+  .matter-item {
+    z-index: 1;
+    width: 100%;
+
+    &.springback {
+      transition: transform 0.3s linear;
+    }
+
+    .check-input {
+      flex: 1;
+
+      .checkbox {
+        transform: scale(1.5);
+      }
+    }
+
+    .title {
+      flex: 3;
+    }
+
+    .introduction {
+      flex: 6;
+    }
+  }
+
+  .action-buttons {
+    width: 150px;
+  }
+}

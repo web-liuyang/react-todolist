@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1><%= title %></h1>
+  <p>Welcome to <%= title %></p>
+  <input id="input" type="file">
+  
+  <script>
+
+    const input = document.getElementById("input");
+    input.addEventListener('change', function (e) {
+      const file = input.files[0];
+      const formData = new FormData();
+      formData.append("img",file);
+      console.log(formData.get("img"));
+      fetch('/upload', {
+        method: 'post',
+        body: formData,
+      }).then(res=>res.json()).then(res=>{
+        console.log(res)
+        let imgStr = `<img src="/img/${res}"/>`
+        const h1 = document.querySelector("h1");
+        h1.innerHTML = imgStr;
+      })
+    })
+    // console.log(input.files);
+
+  </script>
+</body>
+
+</html>

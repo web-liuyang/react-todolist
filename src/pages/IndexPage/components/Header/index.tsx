@@ -30,7 +30,7 @@ const Header: FC = () => {
         className="flex-center add-item-button"
         onClick={() => setShow(true)}
       >
-        <i className="iconfont icon-jia position-relative color-FFFFFF f-bold icon" />
+        <i className="iconfont icon-add position-relative color-FFFFFF f-bold icon" />
       </div>
       <ItemModal
         show={show}

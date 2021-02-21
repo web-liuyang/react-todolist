@@ -1,7 +1,13 @@
-import { Response } from './index';
 
-export namespace User {
-  
+
+export namespace Request {
+  interface Login {
+    phone: string;
+    password: string;
+  }
+}
+
+export namespace Response {
   interface Userinfo {
     id: number;
     phone: string;

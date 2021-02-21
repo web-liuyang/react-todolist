@@ -1,19 +1,28 @@
 import express from 'express';
 import { User } from '../mysql';
-
 import { Reception, Response } from './types';
 import { STATUS } from './types/default';
 const router = express.Router();
 
 router.post('/login', async (req, res, next) => {
-  console.log(req.body);
+  console.log('login-body', req.body);
   const { phone, password }: Reception.Login = req.body;
+
+  if (!phone || !password) {
+    res.json({
+      code: STATUS.PARAMSERROR,
+      msg: '参数错误',
+      success: true,
+      data: null,
+    });
+    return;
+  }
 
   const userinfo = ((await User.findOne({
     where: {
       phone,
     },
-  })) as any) as Response.Login;
+  })) as any) as Response.Login | null;
 
   if (!userinfo) {
     res.json({

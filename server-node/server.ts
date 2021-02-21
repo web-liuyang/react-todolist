@@ -4,10 +4,12 @@
  * Module dependencies.
  */
 
-const app = require('./app');
+import app from './app';
 const debug = require('debug')('server-node:server');
-const http = require('http');
+import http from 'http';
 
+import os from "os";
+console.log(os.networkInterfaces())
 // require("./mysql");
 
 /**
@@ -21,15 +23,15 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-const server = http.createServer(app);
+// const server = http.createServer(app);
+const server = app;
 
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
 server.on('error', onError);
-server.on('listening', onListening);
+// server.on('listening', onListening);
 
 /**
  * Normalize a port into a number, string, or false.
@@ -79,13 +81,18 @@ function onError(error) {
  * Event listener for HTTP server "listening" event.
  */
 
-function onListening() {
-  const addr = server.address();
-  const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
-  debug('Listening on ' + bind);
-}
+// function onListening() {
+//   const addr = server.address();
+//   const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
+//   debug('Listening on ' + bind);
+// }
 
+server.listen(port,'0.0.0.0',()=>{
+  console.log(`listen http://localhost:${port}`)
+  console.log(`listen http://192.168.101.101:${port}`)
+});
 
-setTimeout(()=>{
-  console.log('http://localhost:3000')
-})
+// setTimeout(()=>{
+//   console.log('http://localhost:3000')
+//   console.log(server)
+// })

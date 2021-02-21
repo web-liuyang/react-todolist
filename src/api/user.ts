@@ -2,11 +2,8 @@ import request from './request';
 
 import { Response, User } from './types';
 
-export const login = (phone: string, password: string) => {
-  return request.post<Response<User.Userinfo>>('/user/login', {
-    data: {
-      phone,
-      password,
-    },
+export const login = (data: User.Request.Login) => {
+  return request.post<Response<User.Response.Userinfo>>('/user/login', {
+    data,
   });
 };

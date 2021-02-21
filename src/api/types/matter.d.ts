@@ -1,7 +1,20 @@
-import { Response } from './index';
+import { User } from './index';
 
-export namespace Matter {
+export namespace Request {
+  type Uid = { uId: number };
 
+  type Add = Omit<Response.MatterItem, 'id'> & Uid;
+
+  type Del = Pick<Response.MatterItem, 'id'> & Uid;
+
+  type Edit = Partial<Response.MatterItem> &
+    Pick<Response.MatterItem, 'id'> &
+    Uid;
+
+  type Query = Pick<Response.MatterItem, 'title'> & Uid;
+}
+
+export namespace Response {
   interface MatterItem {
     id: number;
     title: string;
@@ -12,5 +25,4 @@ export namespace Matter {
   interface MatterList {
     [key: number]: MatterItem;
   }
-
 }

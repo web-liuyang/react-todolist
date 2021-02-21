@@ -3,4 +3,5 @@ export enum STATUS {
   NONE = 201 /* 没有数据 */,
   ABSENCE = 202 /* 不存在数据 */,
   AUTHENTICATION = 203 /* 认证错误 */,
+  PARAMSERROR  = 204 /* 参数错误 */,
 }

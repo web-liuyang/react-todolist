@@ -924,6 +924,11 @@ keyv@^3.0.0:
   dependencies:
     json-buffer "3.0.0"
 
+l-native-tools@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/l-native-tools/download/l-native-tools-1.0.1.tgz#6dc9b3454745dc6f048f71cf468db0eb1d353374"
+  integrity sha1-bcmzRUdF3G8Ej3HPRo2w6x01M3Q=
+
 latest-version@^5.0.0:
   version "5.1.0"
   resolved "https://registry.npm.taobao.org/latest-version/download/latest-version-5.1.0.tgz#119dfe908fe38d15dfa43ecd13fa12ec8832face"

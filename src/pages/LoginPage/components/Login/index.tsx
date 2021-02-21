@@ -57,8 +57,8 @@ const Login: FC<IProps> = (props) => {
     }
 
     const res = await user.login(value.phone, value.password);
+    console.log(res)
     if (!res) return;
-
     dLogin(dispatch)(res.data);
 
     history.push('/');

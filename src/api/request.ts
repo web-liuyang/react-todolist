@@ -6,7 +6,7 @@ import { Response } from './types';
 let close: () => void | undefined;
 
 const request = extend({
-  prefix: 'http://localhost:3000/api',
+  prefix: 'http://192.168.101.101:3000/api',
   timeout: 1000,
   errorHandler: (error) => {
     close();
@@ -20,6 +20,8 @@ const request = extend({
 // 请求拦截
 request.interceptors.request.use((url, options) => {
   close = Toast.loading({ content: '加载中', mask: true }).close;
+
+  // console.log(url,options)
 
   return {
     url,

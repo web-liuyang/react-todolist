@@ -6,5 +6,6 @@ export type Response<T = any> = {
   msg: string;
   data: T;
 };
-export { Matter } from './matter';
-export { User } from './user';
+
+export * as Matter from './matter';
+export * as User from './user';

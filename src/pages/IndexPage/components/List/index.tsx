@@ -60,7 +60,7 @@ const Item: FC = () => {
       <div
         ref={oItem}
         className={classname([
-          'position-relative flex-center mt-6 p-12 bg-FFFFFF matter-item',
+          'position-relative flex-center mt-6 p-12 bg-FFFFFF over-hidden matter-item',
           { springback },
         ])}
         style={{ transform: `translateX(${left}px)` }}
